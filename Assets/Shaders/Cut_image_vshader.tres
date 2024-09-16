@@ -1,0 +1,58 @@
+[gd_resource type="VisualShader" load_steps=3 format=2]
+
+[sub_resource type="VisualShaderNodeTexture" id=42]
+source = 2
+
+[sub_resource type="VisualShaderNodeTextureUniform" id=43]
+uniform_name = "Cut"
+
+[resource]
+code = "shader_type canvas_item;
+uniform sampler2D Cut;
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// Texture:3
+	vec3 n_out3p0;
+	float n_out3p1;
+	{
+		vec4 _tex_read = texture(TEXTURE , UV.xy);
+		n_out3p0 = _tex_read.rgb;
+		n_out3p1 = _tex_read.a;
+	}
+
+// TextureUniform:4
+	vec3 n_out4p0;
+	float n_out4p1;
+	{
+		vec4 n_tex_read = texture(Cut, UV.xy);
+		n_out4p0 = n_tex_read.rgb;
+		n_out4p1 = n_tex_read.a;
+	}
+
+// Output:0
+	COLOR.rgb = n_out3p0;
+	COLOR.a = n_out4p1;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( -470.202, 98.1933 )
+mode = 1
+flags/light_only = false
+nodes/fragment/0/position = Vector2( 400, 220 )
+nodes/fragment/3/node = SubResource( 42 )
+nodes/fragment/3/position = Vector2( -200, 100 )
+nodes/fragment/4/node = SubResource( 43 )
+nodes/fragment/4/position = Vector2( -120, 300 )
+nodes/fragment/connections = PoolIntArray( 3, 0, 0, 0, 4, 1, 0, 1 )

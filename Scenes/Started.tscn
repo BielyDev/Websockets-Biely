@@ -1,0 +1,438 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Assets/Fonts/Market_Deco.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/Started.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Themes/Main.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Imagens/user.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Gallery.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Imagens/image.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Shaders/Cut_image.tres" type="Material" id=7]
+
+[sub_resource type="Gradient" id=39]
+interpolation_mode = 2
+offsets = PoolRealArray( 0, 0.790698, 0.828488 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture2D" id=40]
+gradient = SubResource( 39 )
+width = 400
+height = 400
+fill = 1
+fill_from = Vector2( 0.5, 0.5 )
+fill_to = Vector2( 0.9, 0.1 )
+
+[sub_resource type="Animation" id=16]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Ball:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 27, 806 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Ball2:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 395, 670 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Ball3:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.338, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Ball_2:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 484, 273 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "Start"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Ball:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( -2, -2 ),
+"update": 0,
+"values": [ Vector2( 10, 1445 ), Vector2( 27, 806 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Ball2:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( -2, -2 ),
+"update": 0,
+"values": [ Vector2( 1074, 707 ), Vector2( 395, 670 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Ball3:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( -2, -2 ),
+"update": 0,
+"values": [ Vector2( -69, -572 ), Vector2( 1.338, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Ball_2:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( -2, -2 ),
+"update": 0,
+"values": [ Vector2( 1285, -40 ), Vector2( 484, 273 ) ]
+}
+
+[sub_resource type="DynamicFont" id=13]
+size = 99
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=38]
+bg_color = Color( 0.0784314, 0.0823529, 0.0980392, 1 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="Animation" id=37]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Tittle:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Nickname:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Join:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=34]
+resource_name = "Start"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Tittle:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( -2, -2 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Nickname:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Join:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2.5, 3.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Background/Pivot/Anima:playback_speed")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.01 ]
+}
+
+[node name="Started" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+script = ExtResource( 2 )
+
+[node name="Background" type="PanelContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Pivot" type="Control" parent="Background"]
+margin_right = 720.0
+margin_bottom = 1280.0
+
+[node name="Ball" type="TextureRect" parent="Background/Pivot"]
+modulate = Color( 0.234009, 0.245827, 0.277344, 1 )
+anchor_left = 0.0138889
+anchor_top = 1.12891
+anchor_right = 0.569444
+anchor_bottom = 1.44141
+margin_left = 17.0
+margin_top = -639.005
+margin_right = 8017.0
+margin_bottom = 7361.0
+texture = SubResource( 40 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Ball2" type="TextureRect" parent="Background/Pivot"]
+modulate = Color( 0.234009, 0.245827, 0.277344, 1 )
+anchor_left = 1.49167
+anchor_top = 0.552344
+anchor_right = 2.04722
+anchor_bottom = 0.864844
+margin_left = -679.002
+margin_top = -37.0004
+margin_right = 7320.94
+margin_bottom = 7963.0
+texture = SubResource( 40 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Ball3" type="TextureRect" parent="Background/Pivot"]
+modulate = Color( 0.234009, 0.245827, 0.277344, 1 )
+anchor_left = -0.0958333
+anchor_top = -0.446875
+anchor_right = 0.459722
+anchor_bottom = -0.134375
+margin_left = 70.338
+margin_top = 572.0
+margin_right = 8070.34
+margin_bottom = 8572.0
+texture = SubResource( 40 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Ball_2" type="TextureRect" parent="Background/Pivot"]
+modulate = Color( 0.234009, 0.245827, 0.277344, 1 )
+anchor_left = 1.78472
+anchor_top = -0.03125
+anchor_right = 2.34028
+anchor_bottom = 0.28125
+margin_left = -800.998
+margin_top = 313.0
+margin_right = 7199.06
+margin_bottom = 8313.0
+texture = SubResource( 40 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Anima" type="AnimationPlayer" parent="Background/Pivot"]
+autoplay = "Start"
+playback_speed = 0.01
+anims/RESET = SubResource( 16 )
+anims/Start = SubResource( 17 )
+
+[node name="Tittle" type="VBoxContainer" parent="."]
+anchor_top = 0.221094
+anchor_right = 1.0
+anchor_bottom = 0.324219
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="text" type="Label" parent="Tittle"]
+margin_right = 720.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0.407272, 0.433889, 0.480469, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "WEB CHAT"
+align = 1
+
+[node name="hs" type="HSeparator" parent="Tittle/text"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -226.5
+margin_top = -15.0
+margin_right = 226.5
+custom_constants/separation = 15
+
+[node name="Nickname" type="VBoxContainer" parent="."]
+anchor_left = 0.113889
+anchor_top = 0.109375
+anchor_right = 0.886111
+anchor_bottom = 0.746094
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="IconPanel" type="PanelContainer" parent="Nickname"]
+margin_left = 205.0
+margin_top = 267.0
+margin_right = 349.0
+margin_bottom = 411.0
+rect_min_size = Vector2( 144, 144 )
+size_flags_horizontal = 4
+custom_styles/panel = SubResource( 38 )
+
+[node name="Icon" type="TextureButton" parent="Nickname/IconPanel"]
+material = ExtResource( 7 )
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 134.0
+margin_bottom = 134.0
+rect_min_size = Vector2( 124, 124 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+
+[node name="image" type="TextureRect" parent="Nickname/IconPanel/Icon"]
+anchor_left = 0.782257
+anchor_top = 0.806452
+anchor_right = 4.91935
+anchor_bottom = 4.94355
+margin_right = -472.0
+margin_bottom = -472.0
+rect_min_size = Vector2( 41, 41 )
+mouse_filter = 2
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="hs2" type="HSeparator" parent="Nickname"]
+margin_top = 415.0
+margin_right = 555.0
+margin_bottom = 430.0
+custom_constants/separation = 15
+
+[node name="Nickname" type="LineEdit" parent="Nickname"]
+margin_top = 434.0
+margin_right = 555.0
+margin_bottom = 481.0
+align = 1
+max_length = 16
+placeholder_text = "nickname"
+
+[node name="hs" type="HSeparator" parent="Nickname"]
+margin_top = 485.0
+margin_right = 555.0
+margin_bottom = 500.0
+custom_constants/separation = 15
+
+[node name="Warning" type="Label" parent="Nickname"]
+modulate = Color( 0.792157, 0.188235, 0.188235, 1 )
+margin_top = 504.0
+margin_right = 555.0
+margin_bottom = 547.0
+align = 1
+autowrap = true
+
+[node name="Join" type="Button" parent="."]
+anchor_left = 0.284722
+anchor_top = 0.78125
+anchor_right = 0.715278
+anchor_bottom = 0.882813
+margin_left = 1.52588e-05
+text = "JOIN TO CHAT"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Anima" type="AnimationPlayer" parent="."]
+autoplay = "Start"
+anims/RESET = SubResource( 37 )
+anims/Start = SubResource( 34 )
+
+[node name="Gallery" parent="." instance=ExtResource( 5 )]
+visible = false
+self_modulate = Color( 1, 1, 1, 1 )
+anchor_left = 0.0
+anchor_top = 0.0484375
+anchor_right = 1.0
+anchor_bottom = 0.951563
+
+[connection signal="pressed" from="Nickname/IconPanel/Icon" to="." method="_on_Icon_pressed"]
+[connection signal="text_changed" from="Nickname/Nickname" to="." method="_on_Nickname_text_changed"]
+[connection signal="pressed" from="Join" to="." method="_on_Join_pressed"]
+[connection signal="icon_selected" from="Gallery" to="." method="_on_Icons_path_icon_selected"]

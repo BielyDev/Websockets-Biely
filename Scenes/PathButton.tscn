@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/PathButton.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Shaders/Cut_image_vshader.tres" type="Shader" id=3]
+[ext_resource path="res://Assets/Imagens/cube.png" type="Texture" id=4]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 3 )
+shader_param/Cut = ExtResource( 4 )
+
+[node name="PathButton" type="Button"]
+material = SubResource( 1 )
+anchor_right = 0.329167
+anchor_bottom = 0.185156
+margin_right = -0.000244141
+margin_bottom = 0.000320435
+rect_min_size = Vector2( 225, 225 )
+rect_pivot_offset = Vector2( 118, 118 )
+mouse_filter = 1
+custom_colors/icon_color_pressed = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/icon_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/icon_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/icon_color_hover_pressed = Color( 1, 1, 1, 1 )
+custom_colors/icon_color_normal = Color( 1, 1, 1, 1 )
+custom_colors/icon_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+icon_align = 1
+expand_icon = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Panel" type="PanelContainer" parent="."]
+self_modulate = Color( 1, 1, 1, 0.87451 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 146.0
+margin_right = -0.000228882
+
+[node name="Text" type="Label" parent="Panel"]
+margin_top = 24.0
+margin_right = 237.0
+margin_bottom = 67.0
+text = "PASTA"
+align = 1
+valign = 1

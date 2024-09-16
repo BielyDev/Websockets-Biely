@@ -1,0 +1,123 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Icons.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Imagens/refresh-arrow.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Imagens/arrow.png" type="Texture" id=3]
+
+[node name="Gallery" type="PanelContainer"]
+self_modulate = Color( 0.278431, 0.282353, 0.333333, 1 )
+anchor_left = 0.00694444
+anchor_top = 0.0625
+anchor_right = 1.00417
+anchor_bottom = 0.965625
+margin_left = -5.0
+margin_right = -3.00006
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Vbox" type="VBoxContainer" parent="."]
+margin_right = 720.002
+margin_bottom = 1156.0
+
+[node name="Tittle" type="Label" parent="Vbox"]
+modulate = Color( 0.529412, 0.560784, 0.615686, 1 )
+margin_right = 720.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+text = "GALERIA DE IMAGENS"
+align = 1
+valign = 1
+
+[node name="hs" type="HSeparator" parent="Vbox"]
+margin_top = 84.0
+margin_right = 720.0
+margin_bottom = 88.0
+
+[node name="Margin" type="MarginContainer" parent="Vbox"]
+margin_top = 92.0
+margin_right = 720.0
+margin_bottom = 1046.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="Panel" type="PanelContainer" parent="Vbox/Margin"]
+self_modulate = Color( 0.529412, 0.560784, 0.615686, 1 )
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 700.0
+margin_bottom = 934.0
+mouse_filter = 2
+
+[node name="Scroll" type="ScrollContainer" parent="Vbox/Margin/Panel"]
+margin_right = 680.0
+margin_bottom = 914.0
+scroll_horizontal_enabled = false
+
+[node name="grid" type="HFlowContainer" parent="Vbox/Margin/Panel/Scroll"]
+unique_name_in_owner = true
+margin_right = 680.0
+margin_bottom = 914.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 2
+custom_constants/hseparation = 2
+
+[node name="Buttons" type="HBoxContainer" parent="Vbox"]
+margin_top = 1050.0
+margin_right = 720.0
+margin_bottom = 1130.0
+
+[node name="hs2" type="VSeparator" parent="Vbox/Buttons"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 44.0
+margin_bottom = 80.0
+custom_constants/separation = 44
+
+[node name="Back" type="Button" parent="Vbox/Buttons"]
+margin_left = 48.0
+margin_right = 128.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+custom_colors/icon_color_normal = Color( 0.278431, 0.282353, 0.333333, 1 )
+custom_colors/font_color_hover = Color( 0.529412, 0.560784, 0.615686, 1 )
+custom_colors/icon_color_hover = Color( 0.278431, 0.282353, 0.333333, 1 )
+custom_colors/font_color_pressed = Color( 0.677275, 0.708514, 0.763184, 1 )
+icon = ExtResource( 3 )
+expand_icon = true
+
+[node name="Reload" type="Button" parent="Vbox/Buttons"]
+margin_left = 592.0
+margin_right = 672.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_horizontal = 10
+custom_colors/icon_color_normal = Color( 0.278431, 0.282353, 0.333333, 1 )
+custom_colors/font_color_hover = Color( 0.529412, 0.560784, 0.615686, 1 )
+custom_colors/icon_color_hover = Color( 0.278431, 0.282353, 0.333333, 1 )
+custom_colors/font_color_pressed = Color( 0.677275, 0.708514, 0.763184, 1 )
+icon = ExtResource( 2 )
+expand_icon = true
+
+[node name="hs" type="VSeparator" parent="Vbox/Buttons"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 676.0
+margin_right = 720.0
+margin_bottom = 80.0
+custom_constants/separation = 44
+
+[node name="hs2" type="HSeparator" parent="Vbox"]
+margin_top = 1134.0
+margin_right = 720.0
+margin_bottom = 1156.0
+custom_constants/separation = 22
+
+[connection signal="pressed" from="Vbox/Buttons/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Vbox/Buttons/Reload" to="." method="_on_Reload_pressed"]

@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Icon.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Shaders/Cut_image_vshader.tres" type="Shader" id=3]
+[ext_resource path="res://Assets/Imagens/cube.png" type="Texture" id=4]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 3 )
+shader_param/Cut = ExtResource( 4 )
+
+[node name="IconButton" type="Button"]
+material = SubResource( 1 )
+anchor_right = 0.213889
+anchor_bottom = 0.120312
+margin_right = 3.99992
+margin_bottom = 4.00064
+rect_min_size = Vector2( 158, 158 )
+rect_pivot_offset = Vector2( 79, 79 )
+mouse_filter = 1
+custom_colors/icon_color_pressed = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/icon_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/icon_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/icon_color_hover_pressed = Color( 1, 1, 1, 1 )
+custom_colors/icon_color_normal = Color( 1, 1, 1, 1 )
+custom_colors/icon_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+icon_align = 1
+expand_icon = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": true
+}

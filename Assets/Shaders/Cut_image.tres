@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Shaders/Cut_image_vshader.tres" type="Shader" id=1]
+
+[sub_resource type="Gradient" id=39]
+interpolation_mode = 1
+offsets = PoolRealArray( 0.5, 0.676136 )
+colors = PoolColorArray( 1, 1, 1, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture2D" id=40]
+gradient = SubResource( 39 )
+width = 200
+height = 200
+fill = 1
+fill_from = Vector2( 0.5, 0.5 )
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/Cut = SubResource( 40 )
